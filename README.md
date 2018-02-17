@@ -1,4 +1,4 @@
-# Kaltura Editor Integration Guide
+# Kaltura Editing Application Integration Guide
 
 The Kaltura Editor Application v2 provides the following capabilities:  
 
