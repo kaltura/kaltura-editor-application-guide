@@ -12,7 +12,11 @@ The app is loaded as an iframe like so:
 > Replace `<kea_version>` with `latest` to always load the latest production stable version, or set to a specific version number (Refer to the [official changelog](https://knowledge.kaltura.com/kaltura-video-editing-tools-release-notes-and-changelog) for the list of production available versions).  
 **Important**: Do not load the index.html directly, it should only be loaded in an iFrame.
 
-In this repository you will find complete reference implementation examples. These samples can be used as reference to integrating the Kaltura Editor iFrame inside your own applications, calling actions and reacting to events using the [postMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+### The basics
+
+Integrating the Kaltura Editor Application is done by embedding an iFrame inside your web application. Communication with the editor app (calling actions and reacting to events) is done by using the [postMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
+  
+In this repository you will also find complete reference implementation examples (under the reference-samples directory, respective programming language directory).
 
 ## To get started you’ll need
 
@@ -278,3 +282,24 @@ if (postMessageData.messageType === 'kea-go-to-media') {
     $(location).attr('href', redirectUrl);
 }
 ```
+
+# How you can help (guidelines for contributors) 
+Thank you for helping Kaltura grow! If you'd like to contribute please follow these steps:
+* Use the repository issues tracker to report bugs or feature requests
+* Read [Contributing Code to the Kaltura Platform](https://github.com/kaltura/platform-install-packages/blob/master/doc/Contributing-to-the-Kaltura-Platform.md)
+* Sign the [Kaltura Contributor License Agreement](https://agentcontribs.kaltura.org/)
+
+# Where to get help
+* Join the [Kaltura Community Forums](https://forum.kaltura.org/) to ask questions or start discussions
+* Read the [Code of conduct](https://forum.kaltura.org/faq) and be patient and respectful
+
+# Get in touch
+We'd love to hear from you!
+You can learn more about Kaltura and start a free trial at: http://corp.kaltura.com    
+Contact us via Twitter [@Kaltura](https://twitter.com/Kaltura) or email: community@kaltura.com  
+
+# License and Copyright Information
+All code in this project is released under the [AGPLv3 license](http://www.gnu.org/licenses/agpl-3.0.html) unless a different license for a particular library is specified in the applicable library path.   
+
+Copyright © Kaltura Inc. All rights reserved.   
+Authors and contributors: See [GitHub contributors list](https://github.com/kaltura/YOURREPONAME/graphs/contributors).  

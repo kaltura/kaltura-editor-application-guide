@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL ^ E_DEPRECATED); //if you're using PHP 7.2+ mcrypt is deprecated and generateSessionV2 will throw a warning for it. 
 require_once('configs.php');
-require_once('../../../kaltura-php5/KalturaClient.php');
+require_once('./kaltura-php5/KalturaClient.php');
 
 /**
 * Helper function to generate a Kaltura session given privileges and userId
