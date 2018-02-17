@@ -38,8 +38,8 @@ The Kaltura Editor expects a Kaltura Session (KS) in 3 postMessage events:
 
 * Make sure to pass a valid `userId` that will represent the correct `userId` in your system. This `userId` will own the newly created entries (if using Save As or creating a new Quiz). 
 * Include the `sview:<entryId>` privilege to bypass any special Access Control limitations.
-* To enable editing the loaded entry; **Trimming** (Trimming will replace the entry source flavor and is an irreversible operation) or editing of a Quiz entry - add the `edit:<entryId>` privilege.
-* To enable only the creation of new entries (either Clip or Quiz) - do **NOT** add the `edit:<entryId>` privilege.
+* To enable editing the loaded entry; Trimming (Trimming will replace the entry source flavor and is an irreversible operation) or editing of an existing In-Video Quiz entry - add the `edit:<entryId>` privilege.
+* To only enable the creation of new entries (either Clipping or creating a new Quiz) - do **NOT** add the `edit:<entryId>` privilege.
 
 ##### Preview KS:
 
