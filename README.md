@@ -7,7 +7,7 @@ The Kaltura Editor Application v2 provides the following capabilities:
 
 The app is loaded as an iframe like so:  
 
-`<iframe src="://cdnapisec.kaltura.com/apps/kea/v<version>/index.html"></iframe>`
+`<iframe src="//cdnapisec.kaltura.com/apps/kea/v<version>/index.html"></iframe>`
 
 > Replace `<kea_version>` with `latest` to always load the latest production stable version, or set to a specific version number (Refer to the [official changelog](https://knowledge.kaltura.com/node/1926) for the list of production available versions).  
 **Important**: Do not load the index.html directly, it should only be loaded in an iFrame.
