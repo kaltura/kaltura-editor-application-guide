@@ -2,10 +2,10 @@
 
 To get started: 
 
-* Download this folder into your www folder (standard apache webserver is expected with PHP 5.3 and above).
-* Download the PHP 5.3+ Kaltura client library from: https://developer.kaltura.com/api-docs/Client_Libraries and place it into the same folder, give the client folder the name `kaltura-php5`.
-* Open configs.php and fill the parameters as directed in the comments.
-* Direct your browser URL to the index.php file.
+* Place this directory under your web server's document root (web server needs to run PHP 5.3 or above).
+* Download the PHP 5.3+ Kaltura client library from: https://developer.kaltura.com/api-docs/Client_Libraries, extract the archive, rename the directory to `kaltura-php5` and place it under the same directory in your document root.
+* Edit [configs.php](configs.php) and set the parameters as directed in the comments.
+* Request index.php in your browser.
 
 # Where to get help
 * Join the [Kaltura Community Forums](https://forum.kaltura.org/) to ask questions or start discussions

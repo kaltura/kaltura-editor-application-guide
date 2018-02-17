@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Kaltura Editor Wrapper Reference Implementation Code</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style type="text/css">
         iframe {
             border: 1px solid black;
@@ -29,7 +29,7 @@
                 'messageType': 'kea-config',
                 'data': {
                     /* URL of the Kaltura Server to use */
-                    'service_url': 'https://cdnapisec.kaltura.com',
+                    'service_url': 'https://www.kaltura.com',
 
                     /* the partner ID to use */
                     'partner_id': KALTURA_ACCOUNT_ID_INTEGER,
@@ -140,9 +140,12 @@
                 * should return a message {messageType:kea-display-name, data: display name}
                 */
                 if (postMessageData.messageType === 'kea-get-display-name') {
-                    //use the userId to get display name from your service
-                    var getUserDisplaynameUrl = 'kedit-displayname-service/?userId=' + postMessageData.data.userId;
-                    $.getJSON( getKsUrl, null )
+                    /* use the userId to get display name from your service.
+		    * This examples assumes use of https://github.com/kaltura/kaltura-editor-application-guide/blob/master/reference-samples/php/editor-services.php
+		    * Adjust the URL so that it points to where you hosted editor-services.php or implement your own endpoint
+		    */
+                    var getUserDisplaynameUrl = '/editor-services.php' + '?userId=' + postMessageData.data.userId + '&action='+postMessageData.messageType;
+                    $.getJSON( getUserDisplaynameUrl, null )
                     .done(function( responseData ) {
                         e.source.postMessage({
                             messageType: 'kea-display-name',
@@ -192,7 +195,10 @@
                 if (postMessageData.messageType === 'kea-get-ks' || 
                     postMessageData.messageType === 'kea-get-preview-ks')  
                 {
-                    var getKsUrl = 'https://example.com/editor-ks-service/' + '?entryId=' + postMessageData.data.entryId + '&action=' + postMessageData.messageType;
+		    /* This examples assumes use of https://github.com/kaltura/kaltura-editor-application-guide/blob/master/reference-samples/php/editor-services.php
+		    * Adjust the URL so that it points to where you hosted editor-services.php or implement your own endpoint
+		    */
+                    var getKsUrl = '/editor-services.php' + '?entryId=' + postMessageData.data.entryId + '&action=' + postMessageData.messageType;
                     $.getJSON( getKsUrl, null )
                     .done(function( responseData ) {
                         e.source.postMessage({
@@ -212,7 +218,7 @@
                 */
                 else if (postMessageData.messageType === 'kea-go-to-media') {
                     console.log ("Redirecting to the new media: " + postMessageData.data);
-                    var url = "https://example.com/video/?entryId="postMessageData.data;
+                    var url = "https://example.com/video/?entryId="+postMessageData.data;
                     $(location).attr('href',url);
                 }
             });
