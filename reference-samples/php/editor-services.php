@@ -12,7 +12,8 @@ function createSession($privileges, $userId) {
     $config = new KalturaConfiguration();
     $config->serviceUrl = KALTURA_SERVICE_URL;
     $client = new KalturaClient($config);
-    return $client->generateSessionV2(KALTURA_ADMIN_SECRET, $userId, KalturaSessionType::USER, KALTURA_PARTNER_ID, 86400, $privileges);
+    $ks = $client->generateSessionV2(KALTURA_ADMIN_SECRET, $userId, KalturaSessionType::USER, KALTURA_PARTNER_ID, 86400, $privileges);
+    return $ks;
 }
 
 /**
@@ -45,7 +46,17 @@ function getPreviewKS($entryId) {
 * @return string   the user's display name to be presented in the editor app
 **/
 function getDisplayNameForUserId ($userId) {
-    return 'John Doe (' . $userId . ')'; //replace with your own system code
+    // Example using the Kaltura user service (if your managing your users outside of Kaltura, this is where you call your own user management service to get the display name for your userId):
+    $config = new KalturaConfiguration();
+    $config->serviceUrl = KALTURA_SERVICE_URL;
+    $client = new KalturaClient($config);
+    $ks = $client->generateSessionV2(KALTURA_ADMIN_SECRET, 'kedit-get-user-name', KalturaSessionType::ADMIN, KALTURA_PARTNER_ID, 86400, '');
+    $client->setKs($ks);
+    $user = $client->user->get($userId); 
+    $userDisplayName = $userId; //in case we don't have a display name available for this user, use the userId
+    if (isset($user->fullName) && $user->fullName != '' && $user->fullName != $userId)
+        $userDisplayName = $user->fullName . '(' . $userId . ')';
+    return $userDisplayName;
 }
 
 // Editor Services;
