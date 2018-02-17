@@ -6,7 +6,7 @@ require_once('editor-services.php'); //the backend functions for KS generation a
 <html>
 <head>
     <title>Kaltura Editor Wrapper Reference Implementation Code</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style type="text/css">
         iframe {
             border: 1px solid black;
@@ -33,7 +33,7 @@ require_once('editor-services.php'); //the backend functions for KS generation a
                 'messageType': 'kea-config',
                 'data': {
                     /* URL of the Kaltura Server to use */
-                    'service_url': 'https://www.kaltura.com',
+		    'service_url': '<?php echo KALTURA_SERVICE_URL; ?>',
 
                     /* the partner ID to use */
                     'partner_id': <?php echo KALTURA_PARTNER_ID; ?>,

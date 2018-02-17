@@ -10,7 +10,7 @@ require_once('./kaltura-php5/KalturaClient.php');
 **/
 function createSession($privileges, $userId) {
     $config = new KalturaConfiguration();
-    $config->serviceUrl = 'https://www.kaltura.com';
+    $config->serviceUrl = KALTURA_SERVICE_URL;
     $client = new KalturaClient($config);
     return $client->generateSessionV2(KALTURA_ADMIN_SECRET, $userId, KalturaSessionType::USER, KALTURA_PARTNER_ID, 86400, $privileges);
 }
