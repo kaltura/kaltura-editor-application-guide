@@ -2,7 +2,7 @@
 
 The Kaltura Editor Application v2 provides the following capabilities:  
 
-* Iv-Video Quiz Creation and Editing
+* In-Video Quiz Creation and Editing
 * Video Entry Clipping and Trimming
 
 The app is loaded as an iframe like so:  
