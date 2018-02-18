@@ -26,7 +26,7 @@ In this repository you will also find complete reference implementation examples
 
 ### Authentication
 
-The Kaltura Editor expects a Kaltura Session (KS) in 3 postMessage events:
+The Kaltura Editor expects a [Kaltura Session (KS)](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html) in 3 postMessage events:
 
 1. In the Initialization phase - used to load the entry that will be edited.
 2. After a new Clip or Quiz video entry was created - in order to reset the KS to the newly created entry permissions.
