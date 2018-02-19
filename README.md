@@ -222,7 +222,7 @@ if (postMessageData.messageType === 'kea-clip-created') {
 }
 ```
 
-### `'kea-quiz-updated`
+### `kea-quiz-updated`
 
 Sent when an In-Video Quiz entry was update. `message.data` will include the entryId of the Kaltura Entry that was updated. 
 
