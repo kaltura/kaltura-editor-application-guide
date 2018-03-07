@@ -9,7 +9,7 @@ The app is loaded as an iframe like so:
 
 `<iframe src="//cdnapisec.kaltura.com/apps/kea/v<kea_version>/index.html"></iframe>`
 
-> Replace `<kea_version>` with `latest` to always load the latest production ready [stable] version, or set to a specific version (Refer to the [official changelog](https://knowledge.kaltura.com/kaltura-video-editing-tools-release-notes-and-changelog) for the list of versions available on production). 
+> Replace `v<kea_version>` with `latest` to always load the latest production ready [stable] version, or set to a specific version (Refer to the [official changelog](https://knowledge.kaltura.com/kaltura-video-editing-tools-release-notes-and-changelog) for the list of versions available on production). 
 
 For example;
 
