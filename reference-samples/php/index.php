@@ -209,9 +209,10 @@ require_once('editor-services.php'); //the backend functions for KS generation a
                     });
                 }
 
-                /* received when user clicks the "go to media" button after quiz was created/edited
+                /* received when user is to be navigated outside of thed application (e.g. finished editing)
                 * message.data = entryId
-                * host should navigate to a page displaying the relevant media */
+                * The host application should navigate to a page displaying the edited media. 
+                */
                 else if (postMessageData.messageType === 'kea-go-to-media') {
                     console.log ("Redirecting to the new media: " + postMessageData.data);
                     var videoPath = 'https://example.com/video/'; //replace with your real service path for video playbacl pages
