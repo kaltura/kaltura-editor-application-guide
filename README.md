@@ -278,7 +278,7 @@ if (postMessageData.messageType === 'kea-get-display-name') {
 
 ### `kea-go-to-media`  
 
-Sent when a user clicks the "Go to media" button after a quiz was created/edited. The `data` attribute holds the entry ID. The host application should navigate to a page displaying the relevant media.    
+Received when user is to be navigated outside of thed application (e.g. finished editing). The `data` attribute holds the entry ID. The host application should navigate to a page displaying the edited media.    
 
 ```javascript
 if (postMessageData.messageType === 'kea-go-to-media') {
