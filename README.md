@@ -13,7 +13,7 @@ The app is loaded as an iframe like so:
 
 For example;
 
-* Specific Version: `<iframe src="//cdnapisec.kaltura.com/apps/kea/v2.22.2/index.html"></iframe>`
+* Specific Version: `<iframe src="//cdnapisec.kaltura.com/apps/kea/v2.25.2/index.html"></iframe>`
 * Latest stable version: `<iframe src="//cdnapisec.kaltura.com/apps/kea/latest/index.html"></iframe>`
 
 **Important**: Do not load the index.html directly, it should only be loaded in an iFrame.
