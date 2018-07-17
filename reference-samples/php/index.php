@@ -59,7 +59,6 @@ require_once('editor-services.php'); //the backend functions for KS generation a
                         'edit': { name: 'edit',
                             permissions: ['clip', 'trim'],
                             userPermissions: ['clip', 'trim'],
-                            preActivateMessage: 'Note: Trimming a video will trim the source flavor. If you wish to keep the original video, Clip into a new entry instead of Trimming the video.', //optional msg
                             preSaveMessage: 'Note: Trimming a video will trim the source flavor. If you wish to keep the original video, Clip into a new entry instead of Trimming the video.', //optional msg
                             preSaveAsMessage: 'A new entry was created for you.' //optional msg
                         }
