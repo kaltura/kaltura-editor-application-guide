@@ -56,7 +56,6 @@
                         'edit': { name: 'edit',
                             permissions: ['clip', 'trim'],
                             userPermissions: ['clip', 'trim'],
-                            preActivateMessage: 'Note: Trimming a video will trim the source flavor. If you wish to keep the original video, Clip into a new entry instead of Trimming the video.', //optional msg
                             preSaveMessage: 'Note: Trimming a video will trim the source flavor. If you wish to keep the original video, Clip into a new entry instead of Trimming the video.', //optional msg
                             preSaveAsMessage: 'A new entry was created for you.' //optional msg
                         }
@@ -213,9 +212,9 @@
                     });
                 }
 
-                /* received when user clicks the "go to media" button after quiz was created/edited
+                /* received when user is to be navigated outside of thed application (e.g. finished editing)
                 * message.data = entryId
-                * The host application should navigate to a page displaying the relevant media. 
+                * The host application should navigate to a page displaying the edited media. 
                 */
                 else if (postMessageData.messageType === 'kea-go-to-media') {
                     console.log ("Redirecting to the new media: " + postMessageData.data);
