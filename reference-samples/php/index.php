@@ -8,24 +8,46 @@ require_once('editor-services.php'); //the backend functions for KS generation a
     <title>Kaltura Editor Wrapper Reference Implementation Code</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style type="text/css">
-        iframe {
-            border: 1px solid black;
-            min-width: 1024px; /* kedit must have a minimum width of 1024px tablet or 1025px on desktop */
-            /* TODO: Add CSS rules for iPad vs. Desktop so that it automatically applies the right size */
-            width: 1025px; 
-            height: 642px;
-        }
         html, body {
             width: 100%;
             height: 100%;
+            overflow: hidden;
             text-align: center;
+        }
+
+        .kea-frame {
+            margin-top: 20px;
+            min-height: 672px;
+            min-width: 1200px;
+            box-shadow: 0 0 20px 0 rgba(0,0,0,0.25);
+            border-radius: 3px;
+            border-width: 0;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        @media (min-width: 768px) and (max-width: 1200px) {
+            .kea-frame {
+                /* 
+                in tablets we need to set the height of the app to 768px
+                */
+                min-height: 768px;
+            }
+        }
+        @media (max-width: 767px) {
+            /*
+              When KEA is in these dimensions, it will display an unsupported resolution error.
+            */
+            .kea-frame {
+                width: 400px;
+                height: 401px;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- use /latest/ to always get the latest version of the editor app, or vVERSION (e.g. v2.22.1) to load a specific version (list of available versions can be found in the change log: https://knowledge.kaltura.com/kaltura-video-editing-tools-release-notes-and-changelog) -->
-    <iframe src="//cdnapisec.kaltura.com/apps/kea/latest/index.html"></iframe>
+    <iframe class="kea-frame" src="//cdnapisec.kaltura.com/apps/kea/latest/index.html"></iframe>
 
     <script>
         (function(window) {
@@ -33,7 +55,7 @@ require_once('editor-services.php'); //the backend functions for KS generation a
                 'messageType': 'kea-config',
                 'data': {
                     /* URL of the Kaltura Server to use */
-		    'service_url': '<?php echo KALTURA_SERVICE_URL; ?>',
+		            'service_url': '<?php echo KALTURA_SERVICE_URL; ?>',
 
                     /* the partner ID to use */
                     'partner_id': <?php echo KALTURA_PARTNER_ID; ?>,
