@@ -18,6 +18,7 @@ require_once('editor-services.php'); //the backend functions for KS generation a
         .kea-frame {
             margin-top: 20px;
             min-height: 672px;
+            /* kedit must have a minimum width of 1024px tablet and 768px height or 1025px on desktop */
             min-width: 1200px;
             box-shadow: 0 0 20px 0 rgba(0,0,0,0.25);
             border-radius: 3px;
@@ -29,6 +30,7 @@ require_once('editor-services.php'); //the backend functions for KS generation a
             .kea-frame {
                 /* 
                 in tablets we need to set the height of the app to 768px
+                as the application was built to run as full screen in tablets.
                 */
                 min-height: 768px;
             }
