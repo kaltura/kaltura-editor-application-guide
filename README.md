@@ -112,7 +112,7 @@ The following example shows a tabs configuration of all available tabs and permi
 { 
     'quiz': { 
         name: 'quiz', 
-        permissions: ['quiz'], 
+        permissions: ['questions-v2', 'preventSeek'], 
         userPermissions: ['quiz'] 
     }, 
     'edit': { 
