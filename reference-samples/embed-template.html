@@ -52,12 +52,18 @@
 
                     /* tabs to show in navigation */
                     'tabs': {
-                        'quiz': { name: 'quiz', permissions: ['quiz'], userPermissions: ['quiz'] },
+                        'quiz': { name: 'quiz', 
+				  // use 'quiz' for older player versions, and 'questions-v2' for latest player version
+				  // use preventSeek to prevent users from being able to seek while watching a quiz video
+				  // remove preventSeek if you wish to enable users to seek while watching the video
+				  permissions: ['questions-v2', 'preventSeek'], 
+				  userPermissions: ['quiz'] 
+				},
                         'edit': { name: 'edit',
-                            permissions: ['clip', 'trim'],
-                            userPermissions: ['clip', 'trim'],
-                            preSaveMessage: 'Note: Trimming a video will trim the source flavor. If you wish to keep the original video, Clip into a new entry instead of Trimming the video.', //optional msg
-                            preSaveAsMessage: 'A new entry was created for you.' //optional msg
+                            	  permissions: ['clip', 'trim'],
+                            	  userPermissions: ['clip', 'trim'],
+                            	  preSaveMessage: 'Note: Trimming a video will trim the source flavor. If you wish to keep the original video, Clip into a new entry instead of Trimming the video.', //optional msg
+                            	  preSaveAsMessage: 'A new entry was created for you.' //optional msg
                         }
                     },
 
