@@ -4,6 +4,9 @@ The Kaltura Editor Application v2 provides the following capabilities:
 
 * In-Video Quiz Creation and Editing
 * Video Entry Clipping and Trimming
+* (Coming soon!) Clickable hotspots
+
+![screenshot](https://github.com/kaltura/kaltura-editor-application-guide/blob/7d474023435266576d4a56d931743cfa4ee4240d/kaltura-editor.jpg?raw=true)
 
 The app is loaded as an iframe like so:  
 
