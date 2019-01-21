@@ -124,7 +124,7 @@ require_once('editor-services.php'); //the backend functions for KS generation a
                  * can be used to clear app cache, for example.
                  */
                 if(postMessageData.messageType === 'kea-trimming-done') {
-                    console.log('processing of entry with id ' + message.data.entryId + ' is complete');
+                    console.log('Entry was successfuly trimmed');
                 }
 
                 /* received when a clip was created.
