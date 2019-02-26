@@ -122,7 +122,8 @@ The following example shows a tabs configuration of all available tabs and permi
         name: 'edit', 
         permissions: ['clip', 'trim'], 
         userPermissions: ['clip', 'trim'] 
-    } 
+    },
+    'hotspots': { name: 'hotspots' }
 }
 ```  
  
